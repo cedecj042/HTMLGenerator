@@ -19,6 +19,7 @@ use FontTrait;
     }
     public function sample(){
         $this->fontFamily();
+        return $this;
     }
 
 }
