@@ -1,8 +1,8 @@
 <?php
 
-namespace Html\Tags\SingleTags\SingleTag;
-use Html\Tag\Tag;
-use Html\Tags\SingleTags\SingleTagsInterface\SingleTagsInterface;
+namespace Html\Tags\SingleTags;
+use Html\Tag;
+use Html\Tags\SingleTags\SingleTagsInterface;
 
 class SingleTag extends Tag implements SingleTagsInterface {
 

@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-namespace Html\Tag;
+namespace Html;
 use Exception;
 class Tag {
     protected string $tagName;
@@ -22,14 +22,11 @@ class Tag {
         'translate' => null,
         'names' => null
     ];
-    protected $child = [];
 
     public function getTagName(){
         return $this->tagName;
     }
-    public function getChild(){
-        return $this->child;
-    }
+
     public function addClass($class) {
         if (is_array($class)) {
             $this->attributes['class'] = array_merge($this->attributes['class'], $class);

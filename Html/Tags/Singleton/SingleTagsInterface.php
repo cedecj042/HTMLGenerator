@@ -1,6 +1,6 @@
 <?php
 
-namespace Html\Tags\SingleTags\SingleTagsInterface;
+namespace Html\Tags\SingleTags;
 
 interface SingleTagsInterface{
     public function render();
