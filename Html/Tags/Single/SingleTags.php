@@ -1,10 +1,10 @@
 <?php
 
-namespace Html\Tags\SingleTags;
+namespace Html\Tags\Single;
 use Html\Tags\Tag;
-use Html\Tags\SingleTags\SingleTagsInterface;
+use Html\Tags\Single\SingleTagInterface;
 
-class SingleTag extends Tag implements SingleTagsInterface {
+class SingleTag extends Tag implements SingleTagInterface {
 
     public function render() {
         $htmlAttributes = '';
