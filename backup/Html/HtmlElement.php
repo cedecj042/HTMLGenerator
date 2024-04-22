@@ -18,6 +18,7 @@ class HtmlTag extends HtmlTags implements HtmlElementInterface {
         foreach ($this->children as $child) {
             $children .= $child->render();
         }
+        
         return "\n<{$this->tagName}$attributes>$children</{$this->tagName}>";
     }
 

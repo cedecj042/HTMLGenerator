@@ -37,9 +37,13 @@ class Tag {
     }
 
     public function getClass() {
-        return $this->attributes['class'];
+        if (isset($this->attributes["class"])) {
+            return explode(" ", $this->attributes["class"]);
+        } else {
+            return [];
+        }
     }
-
+    
     public function addStyle($style) {
         if (is_array($style)) {
             $this->attributes['style'] = array_merge($this->attributes['style'], $style);

@@ -1,8 +1,9 @@
 <?php
 
 namespace Html\Elements;
+use Html\Tags\Tag;
 
-class HtmlText {
+class HtmlText extends Tag{
     protected $text;
 
     public function __construct($text) {

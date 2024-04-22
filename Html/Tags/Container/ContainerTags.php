@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 namespace Html\Tags\Container;
+use Html\Elements\HtmlText;
 use Html\Tags\Tag;
 
 class ContainerTags extends Tag implements ContainerInterface{
     
-    protected string $content = '';
+    protected HtmlText $content;
     protected $children = [];
 
     public function render(){
@@ -23,10 +24,7 @@ class ContainerTags extends Tag implements ContainerInterface{
             $children .= $tagChild->render();
         }
 
-        // Check if content is empty
-        $content = $this->content ? $this->renderContent() : '';
-
-        return "<{$this->tagName}$myattributes>$children$content</{$this->tagName}>";
+        return "<{$this->tagName}$myattributes>\n$children\n</{$this->tagName}>";
     }
     public function getChild(){
         return $this->children;
@@ -34,11 +32,9 @@ class ContainerTags extends Tag implements ContainerInterface{
     public function addChild(Tag $child) {
         array_push($this->children,$child);
     }
-    public function setContent(string $content){
+    public function setContent(HtmlText $content){
         $this->content = $content;
+        $this->addChild($content);
         return $this;
-    }
-    public function renderContent(){
-        return htmlspecialchars($this->content);
     }
 }
