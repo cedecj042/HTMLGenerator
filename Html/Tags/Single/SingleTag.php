@@ -3,9 +3,9 @@
 namespace Html\Tags\Single;
 
 use Html\Tags\Tag;
-use Html\Tags\Single\SingleTagInterface;
+use Html\Tags\TagInterface;
 
-class SingleTag extends Tag implements SingleTagInterface {
+class SingleTag extends Tag implements TagInterface {
 
     public function render() {
         $htmlAttributes = '';

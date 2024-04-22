@@ -4,8 +4,9 @@ declare(strict_types=1);
 namespace Html\Tags\Container;
 use Html\Elements\HtmlText;
 use Html\Tags\Tag;
+use Html\Tags\TagInterface;
 
-class ContainerTags extends Tag implements ContainerInterface{
+class ContainerTags extends Tag implements TagInterface{
     
     protected HtmlText $content;
     protected $children = [];
