@@ -1,14 +1,15 @@
 <?php
 
 declare(strict_types=1);
-namespace Html;
+namespace Html\Tags;
 use Exception;
+
 class Tag {
     protected string $tagName;
     protected $attributes = [
-        'class' => [],
+        'class' => null,
         'id' => null,
-        'style' => [],
+        'style' => null,
         'hidden' => null,
         'contenteditable' => null,
         'dir' => null,
@@ -27,11 +28,11 @@ class Tag {
         return $this->tagName;
     }
 
-    public function addClass($class) {
-        if (is_array($class)) {
-            $this->attributes['class'] = array_merge($this->attributes['class'], $class);
+    public function addClass($value){
+        if(isset($this->attributes["class"])){
+            $this->attributes["class"] .= " " . $value;
         } else {
-            $this->attributes['class'][] = $class;
+            $this->attributes["class"] = $value;
         }
     }
 

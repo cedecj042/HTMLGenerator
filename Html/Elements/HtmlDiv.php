@@ -5,6 +5,6 @@ use Html\Tags\Container\ContainerTags;
 class HtmlDiv extends ContainerTags{
     
     public function __construct(){
-        $this->tagName = "html";
+        $this->tagName = "div";
     }
 }

@@ -2,17 +2,20 @@
 
 declare(strict_types=1);
 namespace Html\Tags\Container;
-use Html\Tag;
+use Html\Tags\Tag;
 
-
-class ContainerTags extends Tag{
+class ContainerTags extends Tag implements ContainerInterface{
     
-    protected string $content;
+    protected string $content = '';
     protected $children = [];
-    public function render(Tag $tag){
-        $attributes = '';
+
+    public function render(){
+        $myattributes = '';
         foreach ($this->attributes as $name => $value) {
-            $attributes .= " $name=\"$value\"";
+            if($value == null){
+                continue;
+            }
+            $myattributes .= " $name=\"$value\"";
         }
 
         $children = '';
@@ -20,13 +23,16 @@ class ContainerTags extends Tag{
             $children .= $tagChild->render();
         }
 
-        return "<{$this->tagName}$attributes> $children</{$this->tagName}>";
+        // Check if content is empty
+        $content = $this->content ? $this->renderContent() : '';
+
+        return "<{$this->tagName}$myattributes>$children$content</{$this->tagName}>";
     }
     public function getChild(){
         return $this->children;
     }
     public function addChild(Tag $child) {
-        array_push($children,$child);
+        array_push($this->children,$child);
     }
     public function setContent(string $content){
         $this->content = $content;

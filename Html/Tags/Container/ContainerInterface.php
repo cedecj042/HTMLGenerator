@@ -1,9 +1,9 @@
 <?php
 namespace Html\Tags\Container;
-use Html\Tag;
+use Html\Tags\Tag;
 
 interface ContainerInterface{
-    public function render(Tag $tag);
+    public function render();
     public function renderContent();
     
 }

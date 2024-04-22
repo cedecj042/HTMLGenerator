@@ -18,7 +18,7 @@ class Html extends ContainerTags{
         if ($file === false) {
             throw new Exception("Failed to open file for writing.");
         }
-        fwrite($file, $this->render($this));
+        fwrite($file, $this->render());
         fclose($file);
     }
 }
