@@ -5,7 +5,7 @@ namespace Html\Tags;
 use Exception;
 
 class Tag {
-    protected string $tagName;
+    protected string $tagName ="";
     protected $attributes = [
         'class' => null,
         'id' => null,

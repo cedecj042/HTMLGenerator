@@ -22,6 +22,7 @@ $div->addClass("text-white center");
 $div->addStyle("border:none;color:white;background-color:blue;");
 $div->addChild($input->setPlaceholder('username')->setType("text"));
 $body->addChild($div);
+$head->addChild(new HtmlTitle("izza prank"));
 
 $html->addChild($head);
 $html->addChild($body);

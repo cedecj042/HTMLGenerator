@@ -1,9 +1,9 @@
 <?php
 
 namespace Html\Elements\Head;
-use Html\Tags\Single\SingleTag;
+use Html\Tags\Single\SingleHeadTag;
 
-class HtmlLink extends SingleTag{
+class HtmlLink extends SingleHeadTag{
 
     public function __construct(){
         $this->tagName = "link";
