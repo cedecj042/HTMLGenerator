@@ -44,11 +44,11 @@ class Tag {
         }
     }
     
-    public function addStyle($style) {
-        if (is_array($style)) {
-            $this->attributes['style'] = array_merge($this->attributes['style'], $style);
+    public function addStyle($value){
+        if(isset($this->attributes["style"])){
+            $this->attributes["style"] .= " " . $value;
         } else {
-            $this->attributes['style'][] = $style;
+            $this->attributes["style"] = $value;
         }
     }
 

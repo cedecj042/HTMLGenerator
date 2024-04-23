@@ -1,11 +1,9 @@
 <?php
 
 namespace Html\Tags\Single;
-
 use Html\Tags\Tag;
-use Html\Tags\TagInterface;
 
-class SingleTag extends Tag implements TagInterface {
+class SingleHeadTag extends Tag {
 
     public function render() {
         $htmlAttributes = '';
