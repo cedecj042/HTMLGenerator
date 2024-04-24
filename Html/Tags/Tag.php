@@ -34,6 +34,7 @@ class Tag {
         } else {
             $this->attributes["class"] = $value;
         }
+        return $this;
     }
 
     public function getClass() {
@@ -50,6 +51,7 @@ class Tag {
         } else {
             $this->attributes["style"] = $value;
         }
+        return $this;
     }
 
     public function getStyle() {
@@ -62,6 +64,7 @@ class Tag {
         } else {
             throw new Exception("Attribute '$name' does not exist.");
         }
+        return $this;
     }
 
     public function getAttribute($name) {

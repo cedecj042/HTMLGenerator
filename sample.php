@@ -12,8 +12,6 @@ require_once('loader.php');
 $html = new Html("index.html");
 $head = new HtmlHead(new HtmlTitle("Hello World"));
 $body = new HtmlBody();
-
-
 $div = new HtmlDiv();
 $input = new HtmlInput();
 
@@ -22,8 +20,9 @@ $div->addClass("text-white center");
 $div->addStyle("border:none;color:white;background-color:blue;");
 $div->addChild($input->setPlaceholder('username')->setType("text"));
 $body->addChild($div);
-$head->addChild(new HtmlTitle("izza prank"));
 
 $html->addChild($head);
 $html->addChild($body);
 $html->generate();
+
+// print_r($html->getChild());
