@@ -5,10 +5,12 @@ use Html\Tags\Tag;
 
 class SingleHeadTag extends Tag {
 
-    public function render() {
+    public function render(){
         $htmlAttributes = '';
         foreach ($this->attributes as $name => $value) {
-            if($value == null) continue;
+            if ($value == null) {
+                continue;
+            }
             $htmlAttributes .= " $name=\"$value\"";
         }
         return "\n<{$this->tagName}$htmlAttributes>";
