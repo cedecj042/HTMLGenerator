@@ -1,12 +1,13 @@
 <?php
 
 namespace Html\Elements\Body;
+use Html\Tags\Container\ContainerBodyTag;
 
-class HtmlTable {
+class HtmlTable extends ContainerBodyTag {
     protected $rows = [];
 
     public function __construct() {
-
+        $this->tagName = "table";
     }
 
     public function addRow($rowData) {
@@ -14,16 +15,4 @@ class HtmlTable {
         return $this;
     }
 
-    public function render() {
-        $html = "<table\n>";
-        foreach ($this->rows as $rowData) {
-            $html .= "<tr>\n";
-            foreach ($rowData as $cellData) {
-                $html .= "<td>{$cellData}</td>\n";
-            }
-            $html .= "<tr>\n";
-        }
-        $html .= "</table>\n";
-        return $html;
-    }
 }

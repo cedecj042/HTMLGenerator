@@ -25,15 +25,15 @@ $div->addChild($input->setPlaceholder('username')->setType("text"));
 $body->addChild($div);
 
 $table = new HtmlTable();
-$row = new ContainerTrTag();
+// $row = new ContainerTrTag();
 
-$cell1 = new SingleTdTag();
-$cell1->setContent('Cell 1 content');
-$row->addChild($cell1);
+// $cell1 = new SingleTdTag();
+// $cell1->setContent('Cell 1 content');
+// $row->addChild($cell1);
 
-$table->addRow([$row]);
+// $table->addRow([$row]);
 
-// $body->addChild([$table]);
+$body->addChild($table);
 
 $html->addChild($head);
 $html->addChild($body);
