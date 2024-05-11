@@ -7,8 +7,6 @@ use Html\Elements\Body\HtmlDiv;
 use Html\Elements\Head\HtmlHead;
 use Html\Elements\Body\HtmlTable;
 use Html\Elements\Body\HtmlInput;
-use Html\Tags\Single\SingleTdTag;
-use Html\Tags\Container\ContainerTrTag;
 
 require_once('loader.php');
 
@@ -24,7 +22,7 @@ $div->addStyle("border:none;color:white;background-color:blue;");
 $div->addChild($input->setPlaceholder('username')->setType("text"));
 $body->addChild($div);
 
-$table = new HtmlTable();
+// $table = new HtmlTable();
 // $row = new ContainerTrTag();
 
 // $cell1 = new SingleTdTag();
