@@ -7,6 +7,8 @@ use Html\Elements\Body\HtmlDiv;
 use Html\Elements\Head\HtmlHead;
 use Html\Elements\Body\HtmlTable;
 use Html\Elements\Body\HtmlInput;
+use Html\Elements\Body\HtmlA;
+use Html\Elements\Body\HtmlImage;
 
 require_once('loader.php');
 
@@ -22,7 +24,9 @@ $div->addStyle("border:none;color:white;background-color:blue;");
 $div->addChild($input->setPlaceholder('username')->setType("text"));
 $body->addChild($div);
 
-// $table = new HtmlTable();
+$table = new HtmlTable();
+$body->addChild($table);
+
 // $row = new ContainerTrTag();
 
 // $cell1 = new SingleTdTag();
@@ -31,7 +35,12 @@ $body->addChild($div);
 
 // $table->addRow([$row]);
 
-$body->addChild($table);
+$link = new HtmlA('https://www.w3schools.com', 'Sample Link');
+$body->addChild($link);
+
+$image = new HtmlImage();
+$image->setSrc('sample.jpg')->setAlt('Description of the image');
+$body->addChild($image);
 
 $html->addChild($head);
 $html->addChild($body);
