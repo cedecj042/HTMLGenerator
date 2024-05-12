@@ -3,7 +3,7 @@ namespace Html\Elements\Body;
 use Html\Tags\Container\ContainerBodyTag;
 
 
-class HtmlTD extends ContainerBodyTag{
+class HtmlTd extends ContainerBodyTag{
     
     public function __construct(){
         $this->tagName = "td";
@@ -12,8 +12,6 @@ class HtmlTD extends ContainerBodyTag{
         $this->attributes["headers"]=null;
         // $this->attributes["class"]=null;
         // $this->attributes["style"]=null;
-        // $this->attributes["scope"]=null;
-        // $this->attributes["abbr"]=null;
         // $this->attributes["axis"]=null;
         // $this->attributes["align"]=null;
         // $this->attributes["bgcolor"]=null;
