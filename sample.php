@@ -9,6 +9,11 @@ use Html\Elements\Body\HtmlTable;
 use Html\Elements\Body\HtmlInput;
 use Html\Elements\Body\HtmlA;
 use Html\Elements\Body\HtmlImage;
+use Html\Elements\Body\HtmlUl;
+use Html\Elements\Body\HtmlOl;
+use Html\Elements\Body\HtmlLi;
+
+
 
 require_once('loader.php');
 
@@ -34,6 +39,22 @@ $body->addChild($table);
 // $row->addChild($cell1);
 
 // $table->addRow([$row]);
+
+$ul = new HtmlUl();
+$li1 = new HtmlLi();
+$li1->setContent(new HtmlText("Item 1"));
+$li2 = new HtmlLi();
+$li2->setContent(new HtmlText("Item 2"));
+$ul->addItem($li1)->addItem($li2);
+$body->addChild($ul);
+
+$ol = new HtmlOl();
+$li3 = new HtmlLi();
+$li3->setContent(new HtmlText("Item A"));
+$li4 = new HtmlLi();
+$li4->setContent(new HtmlText("Item B"));
+$ol->addItem($li3)->addItem($li4);
+$body->addChild($ol);
 
 $link = new HtmlA('https://www.w3schools.com', 'Sample Link');
 $body->addChild($link);
