@@ -1,4 +1,5 @@
 <?php
+
 use Html\Elements\Html;
 use Html\Elements\HtmlText;
 use Html\Elements\Head\HtmlTitle;
@@ -23,6 +24,7 @@ $head = new HtmlHead(new HtmlTitle("Hello World"));
 $body = new HtmlBody();
 $div = new HtmlDiv();
 $input = new HtmlInput();
+$link = new HtmlA('https://www.w3schools.com', 'Example Link');
 
 $div->setContent(new HtmlText("Hey"));
 $div->addClass("text-white center");
@@ -71,6 +73,8 @@ $body->addChild($link);
 $image = new HtmlImage();
 $image->setSrc('sample.jpg')->setAlt('Description of the image');
 $body->addChild($image);
+$body->addChild($table);
+$body->addChild($link);
 
 $html->addChild($head);
 $html->addChild($body);
