@@ -1,5 +1,7 @@
 <?php
 
+use CSS\CssGenerator;
+use CSS\Properties\Styling\Background;
 use Html\Elements\Html;
 use Html\Elements\HtmlText;
 use Html\Elements\Head\HtmlTitle;
@@ -26,6 +28,16 @@ $div = new HtmlDiv();
 $input = new HtmlInput();
 $link = new HtmlA('https://www.w3schools.com', 'Example Link');
 
+$cssGenerator = new CssGenerator();
+$containerRule = $cssGenerator->addRule('.container');
+$containerRule->addProperty(
+    (new Background())
+        ->background_color('#f0f0f0')
+        ->background_repeat('no-repeat')
+        ->background_size('cover')
+        ->background_position('center')
+);
+
 $div->setContent(new HtmlText("Hey"));
 $div->addClass("text-white center");
 $div->addStyle("border:none;color:white;background-color:blue;");
@@ -43,7 +55,7 @@ $table->addChild($headerRow);
 
 $bodyRow = new HtmlTr();
 $bodyCell1 = new HtmlTd();
-$bodyCell1->setContent(new HtmlText("Example Cell"));
+$bodyCell1->setContent(new HtmlText("Example Cell"))->addClass("container");
 
 $bodyRow->addChild($bodyCell1);
 $table->addChild($bodyRow);
@@ -79,6 +91,6 @@ $body->addChild($link);
 $html->addChild($head);
 $html->addChild($body);
 $html->generate();
-
+file_put_contents('style.css', $cssGenerator->render());
 
 // print_r($html->getChild());

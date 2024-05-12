@@ -7,7 +7,7 @@ use Exception;
 class Tag {
     protected string $tagName ="";
     protected $attributes = [
-        'class' => null,
+        'class' => "",
         'id' => null,
         'style' => null,
         'hidden' => null,
