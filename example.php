@@ -57,6 +57,7 @@ $containerRule->addProperty(
         ->outline_width('3px')
         ->outline_style('solid')
         ->outline_color('#555')
+        ->outline_style('none')
 );
 
 file_put_contents('style.css', $cssGenerator->render());
