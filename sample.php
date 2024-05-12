@@ -1,4 +1,5 @@
 <?php
+
 use Html\Elements\Html;
 use Html\Elements\HtmlText;
 use Html\Elements\Head\HtmlTitle;
