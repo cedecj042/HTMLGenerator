@@ -1,36 +1,12 @@
 <?php
-require_once 'CssGenerator.php';
-require_once 'Properties/CssProperty.php';
 
-require_once 'Properties/Animation/Animation.php';
-require_once 'Properties/Animation/Transition.php';
-
-require_once 'Properties/Box/Border.php';
-require_once 'Properties/Box/Outline.php';
-
-require_once 'Properties/Display/Content.php';
-require_once 'Properties/Display/Display.php';
-
-require_once 'Properties/Layout/BoxModel.php';
-require_once 'Properties/Layout/Flexbox.php';
-require_once 'Properties/Layout/Grid.php';
-require_once 'Properties/Layout/Positioning.php';
-
-require_once 'Properties/Miscellaneous/ClipPath.php';
-require_once 'Properties/Miscellaneous/Cursor.php';
-require_once 'Properties/Miscellaneous/Filter.php';
-require_once 'Properties/Miscellaneous/Miscellaneous.php';
-require_once 'Properties/Miscellaneous/Transform.php';
-
-
-require_once 'Properties/Styling/Background.php';
-require_once 'Properties/Styling/Color.php';
-require_once 'Properties/Styling/Font.php';
-require_once 'Properties/Styling/Text.php';
-
-
-// use CssGenerator\CssGenerator;
-// use CssGenerator\Properties\Layout\BoxModel;
+use CSS\CssGenerator;
+use CSS\Properties\Display\Border;
+use CSS\Properties\Display\Outline;
+use CSS\Properties\Styling\Background;
+use CSS\Properties\Styling\Color;
+use CSS\Properties\Styling\Font;
+use CSS\Properties\Styling\Text;
 
 $cssGenerator = new CssGenerator();
 $containerRule = $cssGenerator->addRule('.container');
