@@ -30,6 +30,7 @@ class ContainerTag extends Tag implements TagInterface{
     }
     public function addChild(Tag $child) {
         array_push($this->children,$child);
+        return $this;
     }
     public function setContent(HtmlText $content){
         $this->addChild($content);

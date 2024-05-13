@@ -13,10 +13,12 @@ class HtmlStyle extends ContainerHeadTag{
 
     public function setMedia($value){
         $this->attributes["media"]=$value;
+        return $this;
     }
 
     public function setType($value){
         $this->attributes["type"]=$value;
+        return $this;
     }
     public function getMedia(){
         return $this->attributes["media"];

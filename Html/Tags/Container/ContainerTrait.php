@@ -14,6 +14,7 @@ trait ContainerTrait
             throw new Exception("Error on adding types.");
         }
         array_push($this->children, $child);
+        return $this;
     }
     public function checkAllowed(Tag $child)
     {
