@@ -1,14 +1,15 @@
 <?php 
+namespace Html\Elements\Head;
 use Html\Tags\Single\SingleHeadTag;
 
 class HtmlMeta extends SingleHeadTag{
 
-    public function __construct(){
+    public function __construct($charset=null,$content=null,$httpEquiv=null,$name=null){
         $this->tagName= "meta";
-        $this->attributes['charset']=null;
-        $this->attributes['content']=null;
-        $this->attributes['http-equiv']=null;
-        $this->attributes['name']=null;
+        $this->attributes['charset']=$charset;
+        $this->attributes['content']=$content;
+        $this->attributes['http-equiv']=$httpEquiv;
+        $this->attributes['name']=$name;
     }
     public function getCharset() {
         return $this->attributes['charset'];
@@ -17,6 +18,7 @@ class HtmlMeta extends SingleHeadTag{
     // Setter for charset
     public function setCharset($charset) {
         $this->attributes['charset'] = $charset;
+        return $this;
     }
 
     // Getter for content
@@ -27,6 +29,7 @@ class HtmlMeta extends SingleHeadTag{
     // Setter for content
     public function setContent($content) {
         $this->attributes['content'] = $content;
+        return $this;
     }
 
     // Getter for http-equiv
@@ -37,6 +40,7 @@ class HtmlMeta extends SingleHeadTag{
     // Setter for http-equiv
     public function setHttpEquiv($httpEquiv) {
         $this->attributes['http-equiv'] = $httpEquiv;
+        return $this;
     }
 
     // Getter for name
@@ -47,5 +51,6 @@ class HtmlMeta extends SingleHeadTag{
     // Setter for name
     public function setName($name) {
         $this->attributes['name'] = $name;
+        return $this;
     }
 }

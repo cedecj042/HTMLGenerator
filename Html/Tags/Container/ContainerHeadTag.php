@@ -15,18 +15,19 @@ class ContainerHeadTag extends ContainerTag{
         HtmlText::class,
     ];
     use ContainerTrait;
-    public function addChild(Tag $child)
-    {
-        // If the child is not an allowed type, throw an exception
-        // echo $child->tagName;
-        if ($child instanceof HtmlTitle && $this->hasTitle()) {
-            throw new Exception("Only one title tag is allowed in the head section.");
-        }
-        if (!$this->checkAllowed($child)) {
-            throw new Exception("Error on adding types.");
-        }
-        array_push($this->children, $child);
-    }
+    // public function addChild(Tag $child)
+    // {
+    //     // If the child is not an allowed type, throw an exception
+    //     // echo $child->tagName;
+    //     if ($child instanceof HtmlTitle && $this->hasTitle()) {
+    //         throw new Exception("Only one title tag is allowed in the head section.");
+    //     }
+    //     if (!$this->checkAllowed($child)) {
+    //         throw new Exception("Error on adding types.");
+    //     }
+    //     array_push($this->children, $child);
+    //     return $this;
+    // }
     private function hasTitle() {
         foreach ($this->children as $child) {
             echo $child;
