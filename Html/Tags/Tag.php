@@ -37,13 +37,13 @@ class Tag {
         return $this;
     }
 
-    // public function getClass() {
-    //     if (isset($this->attributes["class"])) {
-    //         return explode(" ", $this->attributes["class"]);
-    //     } else {
-    //         return [];
-    //     }
-    // }
+    public function getClass() {
+        if (isset($this->attributes["class"])) {
+            return explode(" ", $this->attributes["class"]);
+        } else {
+            return [];
+        }
+    }
     
     public function addStyle($value){
         if(isset($this->attributes["style"])){
