@@ -3,7 +3,8 @@
 namespace Html\Tags\Container;
 
 use Exception;
-use Html\Elements\HtmlScript;
+use Html\Elements\Head\HtmlTitle;
+// use Html\Elements\HtmlScript;
 use Html\Elements\HtmlText;
 use Html\Tags\Single\SingleHeadTag;
 use Html\Tags\Tag;

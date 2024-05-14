@@ -21,7 +21,8 @@ class Tag {
         'tabindex' => null,
         'title' => null,
         'translate' => null,
-        'names' => null
+        'names' => null,
+        'role'=> null
     ];
 
     public function getTagName(){
@@ -123,6 +124,10 @@ class Tag {
         return $this; // Return $this for method chaining
     }
 
+    public function setRole($value) {
+        $this->attributes['role'] = $value;
+        return $this; // Return $this for method chaining
+    }
 
     public function getId() {
         return $this->attributes['id'];
@@ -174,6 +179,9 @@ class Tag {
 
     public function getNames() {
         return $this->attributes['names'];
+    }
+    public function getRole() {
+        return $this->attributes['role'];
     }
 
 }

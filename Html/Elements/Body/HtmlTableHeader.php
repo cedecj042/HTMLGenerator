@@ -2,7 +2,7 @@
 namespace Html\Elements\Body;
 use Html\Tags\Container\ContainerBodyTag;
 
-class HtmlTh extends ContainerBodyTag{
+class HtmlTableHeader extends ContainerBodyTag{
     public function __construct() {
         $this->tagName = "th";
         $this->attributes["colspan"]=null;

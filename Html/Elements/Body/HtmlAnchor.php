@@ -6,7 +6,7 @@ namespace Html\Elements\Body;
 use Html\Tags\Container\ContainerBodyTag;
 use Html\Elements\HtmlText;
 
-class HtmlA extends ContainerBodyTag {
+class HtmlAnchor extends ContainerBodyTag {
     public function __construct ($href = null, $text = null) {
         $this->tagName = 'a';
         $this->attributes["href"] = null;

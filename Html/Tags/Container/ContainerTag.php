@@ -2,7 +2,13 @@
 
 declare(strict_types=1);
 namespace Html\Tags\Container;
+
+use Html\Elements\Body\HtmlAbbreviation;
+use Html\Elements\Body\HtmlAnchor;
+use Html\Elements\Body\HtmlHeading;
 use Html\Elements\HtmlText;
+use Html\Tags\Single\SingleBodyTag;
+use Html\Tags\Single\SingleHeadTag;
 use Html\Tags\Tag;
 use Html\Tags\TagInterface;
 
@@ -18,13 +24,21 @@ class ContainerTag extends Tag implements TagInterface{
             }
             $myattributes .= " $name=\"$value\"";
         }
+        
         $children = '';
         foreach ($this->children as $tagChild) {
-            $children .= $tagChild->render();
+            if(($tagChild instanceof HtmlText) or ($tagChild instanceof SingleBodyTag) or ($tagChild instanceof SingleHeadTag) 
+                or ($tagChild instanceof HtmlAbbreviation) or ($tagChild instanceof HtmlAnchor)){
+                $children .= $tagChild->render();
+            }else{
+                $children .="\n". $tagChild->render()."\n";
+            }
         }
-
-        return "<{$this->tagName}$myattributes>\n\t$children\n\t</{$this->tagName}>";
+        
+        return "<{$this->tagName}$myattributes>$children</{$this->tagName}>";
     }
+
+
     public function getChild(){
         return $this->children;
     }

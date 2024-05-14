@@ -7,6 +7,7 @@ class HtmlText extends Tag{
     protected $text;
 
     public function __construct($text) {
+        $this->tagName = 'text';
         $this->text = $text;
     }
     public function render() {

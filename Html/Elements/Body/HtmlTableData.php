@@ -3,24 +3,13 @@ namespace Html\Elements\Body;
 use Html\Tags\Container\ContainerBodyTag;
 
 
-class HtmlTd extends ContainerBodyTag{
+class HtmlTableData extends ContainerBodyTag{
     
     public function __construct(){
         $this->tagName = "td";
         $this->attributes["colspan"]=null;
         $this->attributes["rowspan"]=null;
         $this->attributes["headers"]=null;
-        // $this->attributes["class"]=null;
-        // $this->attributes["style"]=null;
-        // $this->attributes["axis"]=null;
-        // $this->attributes["align"]=null;
-        // $this->attributes["bgcolor"]=null;
-        // $this->attributes["char"]=null;
-        // $this->attributes["charoff"]=null;
-        // $this->attributes["valign"]=null;
-        // $this->attributes["nowrap"]=null;
-        // $this->attributes["height"]=null;
-        // $this->attributes["width"]=null;
     }
 
     public function setColSpan($value){
