@@ -2,12 +2,19 @@
 
 use Html\Elements\Body\HtmlAbbreviation;
 use Html\Elements\Body\HtmlAnchor;
+use Html\Elements\Body\HtmlAside;
 use Html\Elements\Body\HtmlBody;
 use Html\Elements\Body\HtmlDiv;
+use Html\Elements\Body\HtmlFooter;
 use Html\Elements\Body\HtmlHeader;
 use Html\Elements\Body\HtmlHeading;
+use Html\Elements\Body\HtmlList;
+use Html\Elements\Body\HtmlNav;
+use Html\Elements\Body\HtmlNavigation;
 use Html\Elements\Body\HtmlParagraph;
 use Html\Elements\Body\HtmlSection;
+use Html\Elements\Body\HtmlSpan;
+use Html\Elements\Body\HtmlUnorderedList;
 use Html\Elements\Head\HtmlHead;
 use Html\Elements\Head\HtmlLink;
 use Html\Elements\Head\HtmlTitle;
@@ -16,6 +23,56 @@ use Html\Elements\Html;
 use Html\Elements\HtmlText;
 
 require_once('loader.php');
+
+$designs = [
+        "Mid Century Modern" => [
+            "designer" => "Andrew Lohman",
+            "designer_link" => "http://andrewlohman.com/",
+            "design_num"=>"221"
+        ],
+        "Garments" => [
+            "designer" => "Dan Mall",
+            "designer_link" => "http://danielmall.com/",
+            "design_num"=>"/220"
+        ],
+        "Steel" => [
+            "designer" => "Steffen Knoeller",
+            "designer_link" => "http://steffen-knoeller.de",
+            "design_num"=>"219"
+        ],
+        "Apothecary" => [
+            "designer" => "Trent Walton",
+            "designer_link" => "http://trentwalton.com",
+            "design_num"=>"218"
+        ],
+        "Screen Filler" => [
+            "designer" => "Elliot Jay Stocks",
+            "designer_link" => "http://elliotjaystocks.com/",
+            "design_num"=>"217"
+        ],
+        "Fountain Kiss" => [
+            "designer" => "Jeremy Carlson",
+            "designer_link" => "http://jeremycarlson.com",
+            "design_num"=>"216"
+        ],
+        "A Robot Named Jimmy" => [
+            "designer" => "meltmedia",
+            "designer_link" => "http://meltmedia.com/",
+            "design_num"=>"215"
+        ],
+        "Verde Moderna" => [
+            "designer" => "Dave Shea",
+            "designer_link" => "http://www.mezzoblue.com/",
+            "design_num"=>"214"
+        ]
+    ];
+$designList = new HtmlUnorderedList();
+foreach ($designs as $designName => $details) {
+        $designAnchor = (new HtmlAnchor())->addClass("design-name")->setHref("/".$details['design_num']."/")->addChild(new HtmlText($designName));
+        $designerAnchor = (new HtmlAnchor())->addClass("designer-name")->setHref($details['designer_link'])->addChild(new HtmlText($details['designer']));
+        $list = (new HtmlList())->addChild($designAnchor)->addChild(new HtmlText(" by "))->addChild($designerAnchor);
+        $designList->addChild($list);
+}
 
 
 $html = new Html("index.html");
@@ -90,14 +147,14 @@ $maindiv->addChild((new HtmlDiv())->addClass("main supporting")->setId('zen-supp
                 ->addChild((new HtmlParagraph())
                         ->addChild(new HtmlText('You may modify the style sheet in any way you wish, but not the '))
                         ->addChild($abbreviation_html)
-                        ->addChild(new HtmlText(". This may seem daunting at first if you&#8217;ve never worked this way before, but follow the listed links to learn more, and use the sample files as a guide.")))
+                        ->addChild(new HtmlText(". This may seem daunting at first if you've never worked this way before, but follow the listed links to learn more, and use the sample files as a guide.")))
                 ->addChild((new HtmlParagraph())
                         ->addChild(new HtmlText("Download the sample "))
                         ->addChild((new HtmlAnchor())->setHref("/examples/index")->setTitle("This page's source HTML code, not to be modified.")
                                 ->addChild(new HtmlText("HTML")))
                         ->addChild(new HtmlText(" and "))
                         ->addChild((new HtmlAnchor())->setHref("/examples/style.css")->setTitle("This page's sample CSS, the file you may modify.")->addChild(new HtmlText("CSS")))
-                        ->addChild(new HtmlText(" to work on a copy locally. Once you have completed your masterpiece (and please, don&#8217;t submit half-finished work) upload your "))
+                        ->addChild(new HtmlText(" to work on a copy locally. Once you have completed your masterpiece (and please, don't submit half-finished work) upload your "))
                         ->addChild($abbreviation_css)
                         ->addChild(new HtmlText(" file to a web server under your control. "))
                         ->addChild((new HtmlAnchor())->setHref("http://www.mezzoblue.com/zengarden/submit/")->setTitle("Use the contact form to send us your CSS file")->addChild(new HtmlText("Send us a link")))
@@ -115,13 +172,89 @@ $maindiv->addChild((new HtmlDiv())->addClass("main supporting")->setId('zen-supp
                 ->addChild((new HtmlHeading(3))->addChild(new HtmlText("Requirements")))
                 ->addChild((new HtmlParagraph())
                         ->addChild(new HtmlText("Where possible, we would like to see mostly "))
-                        ->addChild((new HtmlAbbreviation())->setTitle("Cascading Style Sheets, levels 1 and 2")->addChild(new HtmlText("CSS 1 &amp; 2")))
+                        ->addChild((new HtmlAbbreviation())->setTitle("Cascading Style Sheets, levels 1 and 2")
+                                ->addChild(new HtmlText("CSS 1 and 2")))
+                        ->addChild(new HtmlText(" usage. "))
+                        ->addChild((new HtmlAbbreviation())->setTitle("Cascading Style Sheets, levels 3 and 4")
+                                ->addChild(new HtmlText("CSS 3 and 4")))
+                        ->addChild(new HtmlText(" should be limited to widely-supported elements only, or strong fallbacks should be provided. The CSS Zen Garden is about functional, practical "))
+                        ->addChild($abbreviation_css)
+                        ->addChild(new HtmlText(" and not the latest bleeding-edge tricks viewable by 2% of the browsing public. The only real requirement we have is that your "))
+                        ->addChild($abbreviation_css)
+                        ->addChild(new HtmlText("validates."))
                         )
-                ->addChild()
+                ->addChild((new HtmlParagraph())
+                        ->addChild(new HtmlText("Luckily, designing this way shows how well various browsers have implemented "))
+                        ->addChild($abbreviation_css)
+                        ->addChild(new HtmlText(" by now. When sticking to the guidelines you should see fairly consistent results across most modern browsers. Due to the sheer number of user agents on the web these days &#8212; especially when you factor in mobile &#8212; pixel-perfect layouts may not be possible across every platform. That's okay, but do test in as many as you can. Your design should work in at least IE9+ and the latest Chrome, Firefox, iOS and Android browsers (run by over 90% of the population)."))
+                )
+                ->addChild((new HtmlParagraph())
+                        ->addChild(new HtmlText("We ask that you submit original artwork. Please respect copyright laws. Please keep objectionable material to a minimum, and try to incorporate unique and interesting visual themes to your work. We're well past the point of needing another garden-related design."))
+                )
+                ->addChild((new HtmlParagraph())
+                        ->addChild(new HtmlText("This is a learning exercise as well as a demonstration. You retain full copyright on your graphics (with limited exceptions, see "))
+                        ->addChild((new HtmlAnchor())->setHref("http://www.mezzoblue.com/zengarden/submit/guidelines/")->addChild(new HtmlText("submission guidelines")))
+                        ->addChild(new HtmlText(", but we ask you release your "))
+                        ->addChild($abbreviation_css)
+                        ->addChild(new HtmlText(" under a Creative Commons license identical to the "))
+                        ->addChild((new HtmlAnchor())->setHref("http://creativecommons.org/licenses/by-nc-sa/3.0/")->setTitle("View the Zen Garden's license information.")->addChild(new HtmlText("one on this site")))
+                        ->addChild(new HtmlText(" so that others may learn from your work."))
+                )
+                ->addChild((new HtmlParagraph())
+                        ->setRole("contentinfo")
+                        ->addChild(new HtmlText("By "))
+                        ->addChild((new HtmlAnchor())->setHref("http://www.mezzoblue.com/")->addChild(new HtmlText("Dave Shea")))
+                        ->addChild(new HtmlText(". Bandwidth graciously donated by "))
+                        ->addChild((new HtmlAnchor())->setHref("http://www.mediatemple.net/")->addChild(new HtmlText("mediatemple")))
+                        ->addChild(new HtmlText(". Now available: "))
+                        ->addChild((new HtmlAnchor())->setHref("http://www.amazon.com/exec/obidos/ASIN/0321303474/mezzoblue-20/")->addChild(new HtmlText("Zen Garden, the book")))
+                        ->addChild(new HtmlText("."))
+                )
         )
+        ->addChild((new HtmlFooter())
+                ->addChild((new HtmlAnchor())->setHref("http://validator.w3.org/check/referer")->setTitle("Check the validity of this site’s HTML")->addClass("zen-validate-html")->addChild(new HtmlText("HTML")))
+                ->addChild((new HtmlAnchor())->setHref("http://jigsaw.w3.org/css-validator/check/referer")->setTitle("Check the validity of this site’s CSS")->addClass("zen-validate-css")->addChild(new HtmlText("HTML")))
+                ->addChild((new HtmlAnchor())->setHref("http://creativecommons.org/licenses/by-nc-sa/3.0/")->setTitle("View the Creative Commons license of this site: Attribution-NonCommercial-ShareAlike.")->addClass("zen-license")->addChild(new HtmlText("CC")))
+                ->addChild((new HtmlAnchor())->setHref("https://github.com/mezzoblue/csszengarden.com")->setTitle("Fork this site on Github")->addClass("zen-github")->addChild(new HtmlText("GH")))
+                )
 );
 
-
+$maindiv->addChild((new HtmlAside())->addClass("sidebar")->setRole("complementary")
+        ->addChild((new HtmlDiv())->addClass("wrapper")
+                ->addChild((new HtmlDiv())->addClass("design-selection")->setId("design-selection")
+                        ->addChild((new HtmlHeading(3))->addClass("select")->addChild(new HtmlText("Select a Design:")))
+                        ->addChild((new HtmlNavigation())
+                                ->addChild($designList)
+                        )
+                )
+                ->addChild((new HtmlDiv())->addClass("design-archives")->setId("design-archives")
+                        ->addChild((new HtmlHeading(3))->addChild(new HtmlText("Archives:")))
+                        ->addChild((new HtmlNavigation())
+                                ->addChild((new HtmlUnorderedList())
+                                        ->addChild((new HtmlList())->addClass("next")
+                                                ->addChild((new HtmlAnchor())->setHref("/214/page1")
+                                                        ->addChild(new HtmlText("Next Designs"))
+                                                        ->addChild((new HtmlSpan())->addClass("ïndicator")->addChild(new HtmlText("›")))
+                                                )
+                                        )
+                                        ->addChild((new HtmlList())->addClass("viewall")
+                                                ->addChild((new HtmlAnchor())->setHref("http://www.mezzoblue.com/zengarden/alldesigns/")->setTitle("View every submission to the Zen Garden.")
+                                                        ->addChild(new HtmlText("View All Designs"))
+                                                )
+                                        )
+                                )
+                        )        
+                )
+                ->addChild((new HtmlDiv())->addClass("zen-resources")->setId("zen-resources")
+                        ->addChild((new HtmlHeading(3))->addClass("resources")->addChild(new HtmlText("Resources:")))
+                        ->addChild((new HtmlUnorderedList())
+                                ->addChild((new HtmlList())->addClass("view-css")
+                                        ->addChild((new HtmlAnchor())->setHref("style.css")->setTitle("View the sources CSS file of the currently-viewed design.")->addChild(new HtmlText("View This Design's"))->addChild($abbreviation_css))
+                                )
+                        )
+                )
+        )
+);
 
 $html->addChild($head)->addChild($body);
 $html->generate();
