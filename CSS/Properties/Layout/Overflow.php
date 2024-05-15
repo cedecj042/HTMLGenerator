@@ -1,6 +1,6 @@
 <?php
 
-namespace CSS\Properties\Styling;
+namespace CSS\Properties\Layout;
 use CSS\Properties\CssProperty;
 
 class Overflow implements CssProperty {

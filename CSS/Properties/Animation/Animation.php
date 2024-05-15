@@ -6,6 +6,31 @@ use CSS\Properties\CssProperty;
 class Animation implements CssProperty {
     protected $properties = [];
 
+    public function animation($value) {
+        $this->properties[] = "animation: $value;";
+        return $this;
+    }
+
+    public function _webkit_animation($value) {
+        $this->properties[] = "-webkit-animation: $value;";
+        return $this;
+    }
+
+    public function _moz_animation($value) {
+        $this->properties[] = "-moz-animation: $value;";
+        return $this;
+    }
+
+    public function _o_animation($value) {
+        $this->properties[] = "-o-animation: $value;";
+        return $this;
+    }
+
+    public function _ms_animation($value) {
+        $this->properties[] = "-ms-animation: $value;";
+        return $this;
+    }
+
     public function animation_name($value) {
         $this->properties[] = "animation-name: $value;";
         return $this;

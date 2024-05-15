@@ -1,8 +1,8 @@
 <?php
 
 use CSS\CssGenerator;
-use CSS\Properties\Display\Border;
-use CSS\Properties\Display\Outline;
+use CSS\Properties\Box\Border;
+use CSS\Properties\Box\Outline;
 use CSS\Properties\Styling\Background;
 use CSS\Properties\Styling\Color;
 use CSS\Properties\Styling\Font;

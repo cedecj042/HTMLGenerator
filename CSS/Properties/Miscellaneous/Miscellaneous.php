@@ -18,9 +18,14 @@ class Miscellaneous implements CssProperty {
         $this->properties[] = "text-shadow: $value;";
         return $this;
     }
+    // public function src($value) {
+    //     $this->properties[] = "src: $value;";
+    //     return $this;
+    // }
     public function render(): string {
         return implode("\n    ", $this->properties);
     }
+
 
 }
 ?>

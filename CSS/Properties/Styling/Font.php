@@ -6,6 +6,10 @@ use CSS\Properties\CssProperty;
 class Font implements CssProperty {
     protected $properties = [];
 
+    public function font($value) {
+        $this->properties[] = "font: $value;";
+        return $this;
+    }
     public function font_family($value) {
         $this->properties[] = "font-family: $value;";
         return $this;
@@ -28,6 +32,14 @@ class Font implements CssProperty {
 
     public function line_height($value) {
         $this->properties[] = "line-height: $value;";
+        return $this;
+    }
+    public function src($value) {
+        $this->properties[] = "src: $value;";
+        return $this;
+    }
+    public function color($value) {
+        $this->properties[] = "color: $value;";
         return $this;
     }
 

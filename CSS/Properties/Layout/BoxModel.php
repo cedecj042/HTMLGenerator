@@ -6,6 +6,7 @@ use CSS\Properties\CssProperty;
 class BoxModel implements CssProperty {
     protected $properties = [];
 
+    
     public function width($value) {
         $this->properties[] = "width: $value;";
         return $this;
@@ -87,6 +88,10 @@ class BoxModel implements CssProperty {
 
     public function border($value) {
         $this->properties[] = "border: $value;";
+        return $this;
+    }
+    public function display($value) {
+        $this->properties[] = "display: $value;";
         return $this;
     }
     public function render(): string {
