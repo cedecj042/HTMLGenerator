@@ -1,6 +1,10 @@
-.container {
-    background-color: #f0f0f0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+@font-face {
+    font-family: cormorant;
+    src: url("fonts/CormorantGaramond-Regular.ttf");
+    font-family: cormorantSB;
+    src: url("fonts/CormorantGaramond-SemiBold.ttf");
+    font-family: oran;
+    src: url("fonts/Oranienbaum-Regular.otf");
+    font-family: bohemian;
+    src: url("fonts/Bohemian-Soul.otf");
 }

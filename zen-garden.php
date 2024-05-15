@@ -249,12 +249,29 @@ $maindiv->addChild((new HtmlAside())->addClass("sidebar")->setRole("complementar
                         ->addChild((new HtmlHeading(3))->addClass("resources")->addChild(new HtmlText("Resources:")))
                         ->addChild((new HtmlUnorderedList())
                                 ->addChild((new HtmlList())->addClass("view-css")
-                                        ->addChild((new HtmlAnchor())->setHref("style.css")->setTitle("View the sources CSS file of the currently-viewed design.")->addChild(new HtmlText("View This Design's"))->addChild($abbreviation_css))
+                                        ->addChild((new HtmlAnchor())->setHref("style.css")->setTitle("View the sources CSS file of the currently-viewed design.")->addChild(new HtmlText("View This Design's "))->addChild($abbreviation_css))
+                                )
+                                ->addChild((new HtmlList())->addClass("css-resources")
+                                        ->addChild((new HtmlAnchor())->setHref("http://www.mezzoblue.com/zengarden/resources/")->setTitle("Links to great sites with information on using CSS.")->addChild($abbreviation_css)->addChild(new HtmlText(" Resources")))
+                                )
+                                ->addChild((new HtmlList())->addClass("zen-faq")
+                                        ->addChild((new HtmlAnchor)->setHref("http://www.mezzoblue.com/zengarden/faq/")->setTitle("A list of Frequently Asked Questions about the Zen Garden.")->addChild((new HtmlAbbreviation())->setTitle("Frequently Asked Questions")->addChild(new HtmlText("FAQ"))))
+                                )
+                                ->addChild((new HtmlList())->addClass("zen-submit")
+                                        ->addChild((new HtmlAnchor())->setHref("http://www.mezzoblue.com/zengarden/submit/")->setTitle("Send in your own CSS file.")->addChild(new HtmlText("Submit a Design"))) 
+                                )
+                                ->addChild((new HtmlList())->addClass("zen-translations")
+                                        ->addChild((new HtmlAnchor())->setHref("http://www.mezzoblue.com/zengarden/translations/")->setTitle("View translated versions of this page.")->addChild(new HtmlText("Translations")))
                                 )
                         )
                 )
         )
 );
+
+for($i = 1; $i <= 6; $i++){
+        $div = (new HtmlDiv())->addClass("extra".$i)->setRole('presentation');
+        $body->addChild($div);
+}
 
 $html->addChild($head)->addChild($body);
 $html->generate();
