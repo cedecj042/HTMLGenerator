@@ -4,6 +4,7 @@ use Html\Elements\Body\HtmlAbbreviation;
 use Html\Elements\Body\HtmlAnchor;
 use Html\Elements\Body\HtmlAside;
 use Html\Elements\Body\HtmlBody;
+use Html\Elements\Body\HtmlBreak;
 use Html\Elements\Body\HtmlDiv;
 use Html\Elements\Body\HtmlFooter;
 use Html\Elements\Body\HtmlHeader;
@@ -272,6 +273,7 @@ for($i = 1; $i <= 6; $i++){
         $div = (new HtmlDiv())->addClass("extra".$i)->setRole('presentation');
         $body->addChild($div);
 }
+$maindiv->addChild(new HtmlBreak());
 
 $html->addChild($head)->addChild($body);
 $html->generate();

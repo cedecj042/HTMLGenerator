@@ -1,0 +1,37 @@
+@font-face {
+  font-family: cormorant;
+    src: "fonts/CormorantGaramond-Regular.ttf";
+  font-family: cormorantSB;
+    src: "fonts/CormorantGaramond-SemiBold.ttf";
+  font-family: oran;
+    src: "fonts/Oranienbaum-Regular.otf";
+  font-family: bohemian;
+    src: "fonts/Bohemian-Soul.otf";
+}
+html {
+  margin: 0;
+    padding: 0;
+}
+body {
+  background-color: #0F2030;
+  font: 75% georgia, sans-serif;
+    line-height: 1.88889;
+    color: #555753;
+  margin: 0;
+    padding: 0;
+  overflow-x: hidden;
+}
+.page-wrapper {
+  display: grid;
+  position: relative;
+}
+header {
+  animation: fadeIn 5s;
+    -webkit-animation: fadeIn5s;
+    -moz-animation: fadeIn5s;
+    -o-animation: fadeIn5s;
+    -ms-animation: fadeIn5s;
+}
+header h2::before {
+    background-color: #ff0000;
+}
