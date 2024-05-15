@@ -24,6 +24,10 @@ class Text implements CssProperty {
         $this->properties[] = "text-transform: $value;";
         return $this;
     }
+    public function text_shadow($value) {
+        $this->properties[] = "text-shadow: $value;";
+        return $this;
+    }
 
     public function letter_spacing($value) {
         $this->properties[] = "letter-spacing: $value;";
@@ -32,6 +36,11 @@ class Text implements CssProperty {
 
     public function word_spacing($value) {
         $this->properties[] = "word-spacing: $value;";
+        return $this;
+    }
+
+    public function list_style_type($value) {
+        $this->properties[] = "list-style-type: $value;";
         return $this;
     }
 

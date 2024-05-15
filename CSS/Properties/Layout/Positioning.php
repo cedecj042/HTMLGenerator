@@ -31,8 +31,23 @@ class Positioning implements CssProperty {
         return $this;
     }
 
+    public function clip($value) {
+        $this->properties[] = "clip: $value;";
+        return $this;
+    }
+
     public function z_index($value) {
         $this->properties[] = "z-index: $value;";
+        return $this;
+    }
+
+    public function float($value) {
+        $this->properties[] = "float: $value;";
+        return $this;
+    }
+
+    public function clear($value) {
+        $this->properties[] = "clear: $value;";
         return $this;
     }
     public function render(): string {

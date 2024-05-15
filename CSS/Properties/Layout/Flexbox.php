@@ -51,6 +51,11 @@ class FlexBox implements CssProperty {
         return $this;
     }
 
+    public function box_sizing($value) {
+        $this->properties[] = "box-sizing: $value;";
+        return $this;
+    }
+
 
     public function render(): string {
         return implode("\n    ", $this->properties);

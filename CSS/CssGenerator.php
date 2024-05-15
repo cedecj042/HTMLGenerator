@@ -3,7 +3,7 @@
 namespace CSS;
 
 class CssGenerator {
-    protected $rules = [];
+    private $rules = [];
 
     public function addRule($selector) {
         $rule = new CssRule($selector);
@@ -14,9 +14,9 @@ class CssGenerator {
     public function render(): string {
         $css = "";
         foreach ($this->rules as $rule) {
-            $css .= $rule->render(); // Call render() method of CssRule
+            $css .= $rule->render();
         }
         return $css;
     }
 }
-?>
+

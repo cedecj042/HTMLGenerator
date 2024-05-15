@@ -1,6 +1,6 @@
 <?php
 
-namespace CSS\Properties\Display;
+namespace CSS\Properties\Box;
 use CSS\Properties\CssProperty;
 
 class Border implements CssProperty {
@@ -23,6 +23,26 @@ class Border implements CssProperty {
 
     public function border_radius($value) {
         $this->properties[] = "border-radius: $value;";
+        return $this;
+    }
+
+    public function border_collapse($value) {
+        $this->properties[] = "border-collapse: $value;";
+        return $this;
+    }
+
+    public function empty_cells($value) {
+        $this->properties[] = "empty-cells: $value;";
+        return $this;
+    }
+
+    public function caption_side($value) {
+        $this->properties[] = "caption-side: $value;";
+        return $this;
+    }
+
+    public function table_layout($value) {
+        $this->properties[] = "table-layout: $value;";
         return $this;
     }
 

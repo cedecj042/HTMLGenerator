@@ -25,10 +25,6 @@ class Font implements CssProperty {
         $this->properties[] = "font-style: $value;";
         return $this;
     }
-    public function src($value) {
-        $this->properties[] = "src: url($value);";
-        return $this;
-    }
 
     public function line_height($value) {
         $this->properties[] = "line-height: $value;";

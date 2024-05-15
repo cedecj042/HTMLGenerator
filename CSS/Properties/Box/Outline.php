@@ -1,6 +1,6 @@
 <?php
 
-namespace CSS\Properties\Display;
+namespace CSS\Properties\Box;
 use CSS\Properties\CssProperty;
 
 class Outline implements CssProperty {
