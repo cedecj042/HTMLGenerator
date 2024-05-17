@@ -11,6 +11,11 @@ class Grid implements CssProperty {
         return $this;
     }
 
+    public function justify_content($value) {
+        $this->properties[] = "justify-content: $value;";
+        return $this;
+    }
+
     public function grid_template_columns($value) {
         $this->properties[] = "grid-template-columns: $value;";
         return $this;
@@ -30,9 +35,13 @@ class Grid implements CssProperty {
         $this->properties[] = "grid-auto-flow: $value;";
         return $this;
     }
+
+    
+
     public function render(): string {
         return implode("\n    ", $this->properties);
     }
+
 
 }
 ?>

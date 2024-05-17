@@ -1,0 +1,55 @@
+/* Menu Styles */
+/* end menu styles */
+#mainmenu, .sub1, .sub2 {
+  list-style: none;
+}
+#mainmenu li {
+    width: 125px;
+    margin-right: 4px;
+    position: relative;
+    float: left;
+    text-align: center;
+}
+#mainmenu a {
+    font-weight: bold;
+    color: #000;
+    line-height: 35px;
+    background-color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 125px;
+    height: 35px;
+}
+#mainmenu .sub1 a {
+  font-size: 12px;
+  /* 0: margin-top: 3px;; */
+  /* 1: border: 1px solid #000;; */
+}
+#mainmenu .sub2 a {
+  /* 0: margin-left: 5px;; */
+  /* 1: border: 1px solid #000;; */
+}
+#mainmenu li:hover > a {
+  background-color: #237291;
+  color: #fff;
+}
+#mainmenu li:hover a:hover {
+  background-color: aqua;
+  color: #000;
+}
+#mainmenu .sub1 {
+    display: none;
+    position: absolute;
+}
+#mainmenu .sub2 {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 127px;
+}
+#mainmenu li:hover .sub1 {
+  display: block;
+}
+#mainmenu li:hover .sub2 {
+  display: block;
+}

@@ -4,6 +4,8 @@ namespace CSS;
 
 class CssGenerator {
     private $rules = [];
+    private $comments = [];
+
 
     public function addRule($rule) {
         if (is_string($rule)) {
@@ -18,8 +20,15 @@ class CssGenerator {
         }
     }
 
-    public function render(): string {
+    public function addComment($comment) {
+        $this->comments[] = "/* " . $comment . " */";
+    }
+
+    public function render() {
         $css = "";
+        foreach ($this->comments as $comment) {
+            $css .= $comment . "\n";
+        }
         foreach ($this->rules as $rule) {
             $css .= $rule->render();
         }

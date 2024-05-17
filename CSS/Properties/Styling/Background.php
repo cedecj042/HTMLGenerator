@@ -6,6 +6,10 @@ use CSS\Properties\CssProperty;
 class Background implements CssProperty {
     protected $properties = [];
 
+    public function background($value) {
+        $this->properties[] = "background: $value;";
+        return $this;
+    }
     public function background_color($value) {
         $this->properties[] = "background-color: $value;";
         return $this;

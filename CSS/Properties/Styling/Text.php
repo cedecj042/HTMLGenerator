@@ -44,6 +44,11 @@ class Text implements CssProperty {
         return $this;
     }
 
+    public function list_style($value) {
+        $this->properties[] = "list-style: $value;";
+        return $this;
+    }
+
     public function render(): string {
         return implode("\n    ", $this->properties);
     }

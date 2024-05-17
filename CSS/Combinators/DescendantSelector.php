@@ -25,7 +25,7 @@ class DescendantSelector extends CssRule
 
     public function render(): string
     {
-        $css = $this->parentSelector . "  " . $this->selector . " {\n";
+        $css = $this->parentSelector . " " . $this->selector . " {\n";
         foreach ($this->properties as $property) {
             $css .= "    " . $property->render() . "\n";
         }

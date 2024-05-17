@@ -22,6 +22,11 @@ class Miscellaneous implements CssProperty {
     //     $this->properties[] = "src: $value;";
     //     return $this;
     // }
+
+    public function content($value) {
+        $this->properties[] = "content: $value;";
+        return $this;
+    }
     public function render(): string {
         return implode("\n    ", $this->properties);
     }

@@ -6,6 +6,10 @@ use CSS\Properties\CssProperty;
 class Border implements CssProperty {
     protected $properties = [];
 
+    public function border($value) {
+        $this->properties[] = "border: $value;";
+        return $this;
+    }
     public function border_width($value) {
         $this->properties[] = "border-width: $value;";
         return $this;
@@ -31,6 +35,23 @@ class Border implements CssProperty {
         return $this;
     }
 
+    public function border_left($value) {
+        $this->properties[] = "border-left: $value;";
+        return $this;
+    }
+    public function border_right($value) {
+        $this->properties[] = "border-right: $value;";
+        return $this;
+    }
+    public function border_top($value) {
+        $this->properties[] = "border-top: $value;";
+        return $this;
+    }
+    public function border_bottom($value) {
+        $this->properties[] = "border-bottom: $value;";
+        return $this;
+    }
+
     public function empty_cells($value) {
         $this->properties[] = "empty-cells: $value;";
         return $this;
@@ -45,6 +66,27 @@ class Border implements CssProperty {
         $this->properties[] = "table-layout: $value;";
         return $this;
     }
+
+    public function border_top_left_radius($value) {
+        $this->properties[] = "border-top-left-radius: $value;";
+        return $this;
+    }
+
+    public function border_top_right_radius($value) {
+        $this->properties[] = "border-top-right-radius: $value;";
+        return $this;
+    }
+
+    public function border_bottom_left_radius($value) {
+        $this->properties[] = "border-bottom-left-radius: $value;";
+        return $this;
+    }
+
+    public function border_bottom_right_radius($value) {
+        $this->properties[] = "border-bottom-right-radius: $value;";
+        return $this;
+    }
+
 
     public function render(): string {
         return implode("\n    ", $this->properties);

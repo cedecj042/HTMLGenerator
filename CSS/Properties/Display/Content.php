@@ -10,6 +10,20 @@ class Content implements CssProperty {
         $this->properties[] = "content: $value;";
         return $this;
     }
+    public function place_content($value) {
+        $this->properties[] = "place-content: $value;";
+        return $this;
+    }
+
+    public function align_content($value) {
+        $this->properties[] = "align-content: $value;";
+        return $this;
+    }
+
+    public function align_items($value) {
+        $this->properties[] = "align-items: $value;";
+        return $this;
+    }
 
     public function conter_reset($value) {
         $this->properties[] = "content-reset: $value;";
