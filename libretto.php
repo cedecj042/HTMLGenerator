@@ -107,8 +107,8 @@ $body = new HtmlBody();
 
 $head->addChild((new HtmlMeta())->setCharset("UTF-8"))
 ->addChild((new HtmlMeta())->setName("author")->setContent("Roderick A. Bandalan"))
-->addChild((new HtmlLink())->setRel("stylesheet")->setType("text/css")->setHref("styles/libretto.css"))
-->addChild((new HtmlLink())->setRel("stylesheet")->setType("text/css")->setHref("styles/libmenu.css"));
+->addChild((new HtmlLink())->setRel("stylesheet")->setType("text/css")->setHref("/styles/libretto.css"))
+->addChild((new HtmlLink())->setRel("stylesheet")->setType("text/css")->setHref("/styles/libmenu.css"));
 
 
 $body->addChild((new HtmlSection())->setId("header")
