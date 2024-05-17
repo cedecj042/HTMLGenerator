@@ -7,15 +7,15 @@ class HtmlLink extends SingleHeadTag{
 
     public function __construct(){
         $this->tagName = "link";
+        $this->attributes['rel'] = null;
+        $this->attributes['type'] = null;
         $this->attributes['crossorigin'] = null;
         $this->attributes['href'] = null;
         $this->attributes['hreflang'] = null;
         $this->attributes['media'] = null;
         $this->attributes['referrerpolicy'] = null;
-        $this->attributes['rel'] = null;
         $this->attributes['sizes'] = null;
         $this->attributes['title'] = null;
-        $this->attributes['type'] = null;
     }
 
     public function setCrossorigin($value) {
