@@ -107,7 +107,7 @@ foreach($section_array as $key => $value){
 }
 
 $html = new Html("index.html");
-$head = new HtmlHead(new HtmlTitle("Hello World"));
+$head = new HtmlHead(new HtmlTitle("Libretto"));
 $body = new HtmlBody();
 
 $head->addChild((new HtmlMeta())->setCharset("UTF-8"))

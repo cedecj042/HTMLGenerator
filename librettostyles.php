@@ -269,7 +269,7 @@ $footercopyrighttext->addProperties([
     ->font_size('13px')
     ->color('#fff'),
     (new Positioning)
-    ->position('absoulute')
+    ->position('absolute')
     ->bottom('20px')
     ->right('10px')
 ]);
