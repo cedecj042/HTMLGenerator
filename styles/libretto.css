@@ -1,5 +1,4 @@
 /* Base Styles for the main sections */
-/* section layouts */
 * {
   margin: 0px;
     padding: 0px;
@@ -47,16 +46,16 @@ body {
   width: 1000px;
     height: 350px;
 }
-#headleft img {
+#headlleft img {
     display: block;
     padding-top: 40px;
     margin: 0 auto;
 }
-#headleft {
+#headlleft {
   width: 600px;
   float: left;
 }
-#headright {
+#headlright {
   width: 400px;
   float: left;
 }
@@ -127,6 +126,14 @@ body {
     font-size: 45px;
     font-weight: normal;
     color: #00f;
+    text-align: center;
+}
+#headlright .headlinetext {
+    display: block;
+    font-family: arial, verdana, sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    color: #f00;
     text-align: center;
 }
 #footer #copyrighttext {

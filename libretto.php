@@ -30,7 +30,7 @@ foreach ($menu_array as $key => $value) {
     
     if (is_array($value)) {
         $li = (new HtmlList())->addChild((new HtmlAnchor())->setHref("#")->addChild(new HtmlText($key)));
-        $subul = (new HtmlUnorderedList())->setId("sub1");
+        $subul = (new HtmlUnorderedList())->addClass("sub1");
         foreach ($value as $sublist) {
             if (is_array($sublist)) {
                 $subli = (new HtmlList())->addChild((new HtmlAnchor())->setHref("#")->addChild(new HtmlText($sublist[0])));
@@ -92,6 +92,7 @@ $section_array=[
     qui officia deserunt mollit anim id est laborum.&quot;'];
 
 $section = (new HtmlSection())->setId("placeholder");
+$count=1;
 foreach($section_array as $key => $value){
     $section->addChild((new HtmlSection())->addClass("sections")
         ->addChild((new HtmlParagraph())->addChild(new HtmlText($key)))
@@ -99,6 +100,10 @@ foreach($section_array as $key => $value){
             ->addChild(new HtmlText($value))
         )
     );
+    if ($count %2 == 0 && $count != count($array)){
+        $section->addChild((new HtmlBreak()));
+        $count++;
+    }
 }
 
 $html = new Html("index.html");

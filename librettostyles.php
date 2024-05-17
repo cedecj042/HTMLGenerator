@@ -100,7 +100,7 @@ $headline->addProperty(
     ->height('350px')   
 );
 
-$headleftimg = new DescendantSelector('#headleft', 'img');
+$headleftimg = new DescendantSelector('#headlleft', 'img');
 $headleftimg->addProperty(
     (new BoxModel())
     ->display('block')
@@ -109,7 +109,7 @@ $headleftimg->addProperty(
 );
 $cssGenerator->addRule($headleftimg);
 
-$headleft = $cssGenerator->addRule('#headleft');
+$headleft = $cssGenerator->addRule('#headlleft');
 $headleft->addProperties([
     (new BoxModel())
     ->width('600px'),
@@ -117,7 +117,7 @@ $headleft->addProperties([
     ->float('left')
 ]);
 
-$headright = $cssGenerator->addRule('#headright');
+$headright = $cssGenerator->addRule('#headlright');
 $headright->addProperties([
     (new BoxModel())
     ->width('400px'),
@@ -256,6 +256,8 @@ $headlrightheadlinetext->addProperties([
     (new Text())
     ->text_align('center')
 ]);
+
+$cssGenerator->addRule($headlrightheadlinetext);
 
 $footercopyrighttext= new DescendantSelector('#footer', '#copyrighttext');
 $footercopyrighttext->addProperties([
