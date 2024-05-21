@@ -27,7 +27,6 @@ $ul = (new HtmlUnorderedList())->setId("mainmenu");
 
 
 foreach ($menu_array as $key => $value) {
-    
     if (is_array($value)) {
         $li = (new HtmlList())->addChild((new HtmlAnchor())->setHref("#")->addChild(new HtmlText($key)));
         $subul = (new HtmlUnorderedList())->addClass("sub1");
