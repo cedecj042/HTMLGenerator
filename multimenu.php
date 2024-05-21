@@ -155,4 +155,4 @@ $copyrightbox->addProperties([
 ]);
 
 $cssContent = $cssGenerator->render();
-file_put_contents('styles/multimenu.css', $cssContent);
+$cssGenerator->generateAndSaveToFile('styles/multimenu.css');
