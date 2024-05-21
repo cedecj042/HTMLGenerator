@@ -47,14 +47,9 @@ In each element it is extended to its corresponding classified parent tag, like 
 - Container Tag for head - ContainerHeadTag
 - Container Tag for body - ContainerBodyTag
 
-We will create all Html<Tags> in the Elements folder
+We will create all Html<Tags> in the Elements folder under their expected classified tag, which is for body and head:
 - Html
-- Head
-- Body
-- Div
-- Input
-- Paragraph
-- etc.
+- Element
 
 Since, each tag has different specific attributes, then inside each HtmlTags, like input, will have the specific functions to set their own specific attributes.
 
