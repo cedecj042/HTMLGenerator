@@ -82,4 +82,4 @@ $cssGenerator->addRule($mainmenuaactive);
 
 
 $cssContent = $cssGenerator->render();
-file_put_contents('styles/cssmenu1.css', $cssContent);
+$cssGenerator->generateAndSaveToFile('styles/cssmenu1.css');

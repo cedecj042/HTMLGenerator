@@ -274,7 +274,4 @@ $footercopyrighttext->addProperties([
     ->right('10px')
 ]);
 
-$cssGenerator->addRule($footercopyrighttext);
-
-$cssContent = $cssGenerator->render();
-file_put_contents('styles/libretto.css', $cssContent);
+$cssGenerator->generateAndSaveToFile('styles/libretto.css');

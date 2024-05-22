@@ -56,15 +56,15 @@ Since, each tag has different specific attributes, then inside each HtmlTags, li
 The HTML text and the HTML Script is a special case. 
 
 
-Usage Instructions:
+# Usage Instructions:
 In order to fully utilize this program's capabilities, here are some examples of how to do so:
 
-Step 1: Create an HTML Element
+# Step 1: Create an HTML Element
 
     $span = new HtmlSpan();
     $span->setId('exampleid')->setContent(new HtmlText('Hello World!'));
 
-Html Output:
+# Html Output:
 
     <span id="exampleid">Hello World!</span>
 
@@ -72,12 +72,12 @@ In this example, we first declare a variable name for an Html Element, in this c
 
 We then proceed to call the attribute setters for that specific element. In this instance, we set the 'id' attribute to 'exampleid' and set the content of the span to 'Hello World!' by using 'HtmlText' class.
 
-Step 2: Add Content to Elements
+# Step 2: Add Content to Elements
 
     $text = new HtmlText('This is an example text content');
     $span->addChild($text);
 
-Html Output:
+# Html Output:
     
     <span id="exampleid">Hello World!
     This is an example text content
@@ -85,13 +85,13 @@ Html Output:
 
 In this example, we create a new 'HtmlText' object with the content 'This is an example content'. We then add this text object as a child to the previously created '$span' element using the 'addChild' method. This nests the new text content within the span.
 
-Step 3: Add the Span to a Container
+# Step 3: Add the Span to a Container
 
     $containerSpan = new HtmlSpan();
     $containerSpan->setId('container');
     $containerSpan->addChild($span);
 
-Html Output:
+# Html Output:
 
     <span id="container">
         <span id="exampleid">Hello World!
@@ -101,13 +101,13 @@ Html Output:
 
 In this example, we create a new 'HtmlSpan' element and assign it to the variable '$containerSpan'. We set the id attribute of this container to 'container'. We then add the previously created '$span' element as a child of this container using the addChild method. This nests the span within the container span.
 
-Step 4: Buld the HTML Structure
+# Step 4: Buld the HTML Structure
 
     $body = new HtmlBody();
     $body->setId('body');
     $body->addChild($containerSpan);
 
-Html Output:
+# Html Output:
 
     <body id="body">
     <div id="container">
@@ -119,7 +119,7 @@ Html Output:
 
 In this example, we create a body element and assign it to the variable '$body'. We set the id attribute of the body to body and add the previously created '$containerSpan' element as a child to this body. 
 
-Step 5: Combine everything and generate a Complete HTML Document
+# Step 5: Combine everything and generate a Complete HTML Document
 
     
     $span = new HtmlSpan();
@@ -149,7 +149,7 @@ Step 5: Combine everything and generate a Complete HTML Document
 
     $html->generate();
 
-Html Output:
+# Html Output:
 
     <!DOCTYPE html>
     <html>

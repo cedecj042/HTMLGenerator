@@ -191,4 +191,4 @@ $menulihoverul->addProperty(
 
 
 $cssContent = $cssGenerator->render();
-file_put_contents('styles/cssmenu2.css', $cssContent);
+$cssGenerator->generateAndSaveToFile('styles/cssmenu2.css');

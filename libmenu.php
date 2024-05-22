@@ -118,5 +118,7 @@ $mainmenulihoversub2->addProperty(
     ->display('block')
 );
 
-$cssContent = $cssGenerator->render();
-file_put_contents('styles/libmenu.css', $cssContent);
+// $cssContent = $cssGenerator->render();
+// file_put_contents('styles/libmenu.css', $cssContent);
+
+$cssGenerator->generateAndSaveToFile('styles/libmenu.css');
