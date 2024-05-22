@@ -34,5 +34,18 @@ class CssGenerator {
         }
         return $css;
     }
+
+    public function generateAndSaveToFile($filePath) {
+        $cssContent = $this->render();
+        $file = fopen($filePath, 'w');
+        if (!$file) {
+            throw new \Exception("Failed to open file: {$filePath}");
+        }
+        if (fwrite($file, $cssContent) === false) {
+            fclose($file);
+            throw new \Exception("Failed to write to file: {$filePath}");
+        }
+        fclose($file);
+    }
 }
 
