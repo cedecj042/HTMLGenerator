@@ -15,7 +15,7 @@ class Html extends Tag{
     
     public function __construct($filename){
         $this->tagName = "html";
-        $this->filename = $filename . "html";
+        $this->filename = $filename . ".html";
         $this->attributes["xmlns"] = null;
     }
 

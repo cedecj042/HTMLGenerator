@@ -105,7 +105,7 @@ foreach($section_array as $key => $value){
     }
 }
 
-$html = new Html("index.html");
+$html = new Html("index");
 $head = new HtmlHead(new HtmlTitle("Libretto"));
 $body = new HtmlBody();
 
@@ -142,6 +142,6 @@ $body->addChild((new HtmlSection())->setId("header")
 )->addChild((new HtmlSection())->setId("footer")
     ->addChild((new HtmlSpan())->setId("copyrighttext")->addChild(new HtmlText("Copyright &copy; International Web Development, All rights reserved 2013")))
 );  
-$body->addChild((new HtmlAudio())->setControls());
+
 $html->setHead($head)->setBody($body);
 $html->generate();

@@ -60,7 +60,7 @@ When Generating an HTML Class, it takes a parameter of the filename. You can als
 
 ## Usage Instructions:
 
-This library uses method chaining in order 
+This library uses method chaining in order to avoid cutting code line by line.
 In order to fully utilize this program's capabilities, 
 here are some examples of how to do so:
 
