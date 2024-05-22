@@ -62,7 +62,7 @@ When Generating an HTML Class, it takes a parameter of the filename. You can als
 
 This library uses method chaining in order to avoid cutting code line by line.
 In order to fully utilize this program's capabilities, 
-here are some examples of how to do so:
+Here are some examples of how to do so:
 
 ### Step 1: Create an HTML Element
 #### Option 1:
@@ -160,12 +160,12 @@ In this example, we create a body element and assign it to the variable '$body'.
     $body->addChild($containerSpan);
 
     
-    $html = new Html();
+    $html = new Html('');
     $title = new HtmlTitle('Usage Instructions');
     $head = new HtmlHead($title);
 
-    $html->addChild($head);
-    $html->addChild($body);
+    $html->setHead($head);
+    $html->setBody($body);
 
     $html->generate();
 

@@ -18,7 +18,6 @@ class Tag {
         'tabindex' => null,
         'title' => null,
         'translate' => null,
-        'names' => null,
         'role'=> null
     ];
     protected $solo_attributes=[
@@ -121,10 +120,6 @@ class Tag {
         return $this; // Return $this for method chaining
     }
 
-    public function setNames($value) {
-        $this->attributes['names'] = $value;
-        return $this; // Return $this for method chaining
-    }
 
     public function setRole($value) {
         $this->attributes['role'] = $value;
@@ -183,9 +178,6 @@ class Tag {
         return $this->attributes['translate'];
     }
 
-    public function getNames() {
-        return $this->attributes['names'];
-    }
     public function getRole() {
         return $this->attributes['role'];
     }
