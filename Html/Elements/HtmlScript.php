@@ -1,9 +1,9 @@
 <?php
 
 namespace Html\Elements;
-use Html\Tags\Tag;
+use Html\Tags\Container\ContainerTag;
 
-class HtmlScript extends Tag{
+class HtmlScript extends ContainerTag{
     public function __construct(){
         $this->tagName = "script";
         $this->attributes["async"]=null;

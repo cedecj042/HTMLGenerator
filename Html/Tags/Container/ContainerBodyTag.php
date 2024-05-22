@@ -11,9 +11,8 @@ class ContainerBodyTag extends ContainerTag {
         ContainerBodyTag::class,
         SingleBodyTag::class,
         HtmlText::class,
+        HtmlScript::class
     ];
-
     use ContainerTrait;
-    
 }
 
