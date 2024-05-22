@@ -3,6 +3,7 @@
 namespace Html\Tags\Container;
 
 use Exception;
+use Html\Elements\Html;
 use Html\Tags\Tag;
 
 trait ContainerTrait

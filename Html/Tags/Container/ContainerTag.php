@@ -6,6 +6,7 @@ namespace Html\Tags\Container;
 use Html\Elements\Body\HtmlAbbreviation;
 use Html\Elements\Body\HtmlAnchor;
 use Html\Elements\Body\HtmlHeading;
+use Html\Elements\HtmlScript;
 use Html\Elements\HtmlText;
 use Html\Tags\Single\SingleBodyTag;
 use Html\Tags\Single\SingleHeadTag;
@@ -13,18 +14,15 @@ use Html\Tags\Tag;
 use Html\Tags\TagInterface;
 
 class ContainerTag extends Tag implements TagInterface{
-    
+    protected $allowedTypes = [
+        HtmlText::class,
+        HtmlScript::class
+    ];
+    use ContainerTrait;
     protected $children = [];
 
     public function render(){
-        $myattributes = '';
-        foreach ($this->attributes as $name => $value) {
-            if($value == null){
-                continue;
-            }
-            $myattributes .= " $name=\"$value\"";
-        }
-        
+        $myattributes = $this->renderAttributes();
         $children = '';
         foreach ($this->children as $tagChild) {
             if(($tagChild instanceof HtmlText) or ($tagChild instanceof SingleBodyTag) or ($tagChild instanceof SingleHeadTag) 
@@ -34,20 +32,14 @@ class ContainerTag extends Tag implements TagInterface{
                 $children .="\n". $tagChild->render()."\n";
             }
         }
-        
         return "<{$this->tagName}$myattributes>$children</{$this->tagName}>";
     }
-
 
     public function getChild(){
         return $this->children;
     }
-    public function addChild(Tag $child) {
-        array_push($this->children,$child);
-        return $this;
-    }
-    public function setContent(HtmlText $content){
-        $this->addChild($content);
+    public function setText($text) {
+        $this->addChild(new HtmlText ($text));
         return $this;
     }
 }

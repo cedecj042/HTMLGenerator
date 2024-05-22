@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 namespace Html\Tags;
-use Exception;
 
 class Tag {
     protected string $tagName ="";
@@ -10,12 +9,10 @@ class Tag {
         'class' => "",
         'id' => null,
         'style' => null,
-        'hidden' => null,
         'contenteditable' => null,
         'dir' => null,
         'draggable' => null,
         'enterkeyhint' => null,
-        'inert' => null,
         'inputmode' => null,
         'lang' =>null,
         'tabindex' => null,
@@ -23,6 +20,11 @@ class Tag {
         'translate' => null,
         'names' => null,
         'role'=> null
+    ];
+    protected $solo_attributes=[
+        'inert' => false,
+        'hidden' => false,
+        'popover' => false
     ];
 
     public function getTagName(){
@@ -64,8 +66,8 @@ class Tag {
         return $this; // Return $this for method chaining
     }
 
-    public function setHidden($value) {
-        $this->attributes['hidden'] = $value;
+    public function setHidden() {
+        $this->solo_attributes['hidden'] = true;
         return $this; // Return $this for method chaining
     }
 
@@ -89,8 +91,8 @@ class Tag {
         return $this; // Return $this for method chaining
     }
 
-    public function setInert($value) {
-        $this->attributes['inert'] = $value;
+    public function setInert() {
+        $this->solo_attributes['inert'] = true;
         return $this; // Return $this for method chaining
     }
 
@@ -126,6 +128,10 @@ class Tag {
 
     public function setRole($value) {
         $this->attributes['role'] = $value;
+        return $this; // Return $this for method chaining
+    }
+    public function setPopover() {
+        $this->solo_attributes['popover'] = true;
         return $this; // Return $this for method chaining
     }
 
@@ -182,6 +188,23 @@ class Tag {
     }
     public function getRole() {
         return $this->attributes['role'];
+    }
+
+    public function renderAttributes(){
+        $myattributes = '';
+        foreach ($this->attributes as $name => $value) {
+            if($value == null){
+                continue;
+            }
+            $myattributes .= " $name=\"$value\"";
+        }
+        foreach ($this->solo_attributes as $name => $value) {
+            if($value == false){
+                continue;
+            }
+            $myattributes .= " $name";
+        }
+        return $myattributes;
     }
 
 }

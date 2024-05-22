@@ -1,8 +1,10 @@
 <?php
 
 use Html\Elements\Body\HtmlAnchor;
+use Html\Elements\Body\HtmlAudio;
 use Html\Elements\Body\HtmlBody;
 use Html\Elements\Body\HtmlBreak;
+use Html\Elements\Body\HtmlDiv;
 use Html\Elements\Body\HtmlImage;
 use Html\Elements\Body\HtmlList;
 use Html\Elements\Body\HtmlParagraph;
@@ -23,8 +25,6 @@ $menu_array= ['Home','Reading'=>['Novels','Hardbound','Paperback','Comics','Cate
 
 
 $ul = (new HtmlUnorderedList())->setId("mainmenu");
-
-
 
 foreach ($menu_array as $key => $value) {
     if (is_array($value)) {
@@ -142,6 +142,6 @@ $body->addChild((new HtmlSection())->setId("header")
 )->addChild((new HtmlSection())->setId("footer")
     ->addChild((new HtmlSpan())->setId("copyrighttext")->addChild(new HtmlText("Copyright &copy; International Web Development, All rights reserved 2013")))
 );  
-
-$html->addChild($head)->addChild($body);
+$body->addChild((new HtmlAudio())->setControls());
+$html->setHead($head)->setBody($body);
 $html->generate();
