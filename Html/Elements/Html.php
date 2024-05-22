@@ -9,20 +9,20 @@ use Html\Tags\Tag;
 
 class Html extends Tag{
     
-    protected string $filePath;
+    protected string $filename;
     protected HtmlHead $head;
     protected HtmlBody $body;
     
-    public function __construct($filePath){
+    public function __construct($filename){
         $this->tagName = "html";
-        $this->filePath = $filePath;
+        $this->filename = $filename . "html";
         $this->attributes["xmlns"] = null;
     }
 
     public function generate() {
 
         if($this->head != null && $this->body != null){
-            $file = fopen($this->filePath, "w");
+            $file = fopen($this->filename, "w");
             if ($file === false) {
                 throw new Exception("Failed to open file for writing.");
             }
