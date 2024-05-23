@@ -7,16 +7,16 @@ It consists of various classes that handle different aspects of CSS, such as sel
 ## Folder Structure
 The project is organized into several folders:
 
-CSS
-├───Combinators
-├───Properties
-│   ├───Animation
-│   ├───Box
-│   ├───Display 
-│   ├───Layout
-│   ├───Miscellaneous
-│   └───Styling
-└───Pseudoclass
+- CSS
+  - Combinators
+  - Properties
+    - Animation
+    - Box
+    - Display
+    - Layout
+    - Miscellaneous
+    - Styling
+  - Pseudoclass
 
 ### Combinators: Contains classes for combinator-related CSS properties.
 ### Properties: Divided into subfolders like Animation, Box, Display, Layout, Miscellaneous, and Styling, each containing classes for specific CSS properties.
