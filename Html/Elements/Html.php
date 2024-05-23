@@ -3,7 +3,6 @@
 namespace Html\Elements;
 use Html\Elements\Body\HtmlBody;
 use Html\Elements\Head\HtmlHead;
-use Html\Tags\Container\ContainerTag;
 use Exception;
 use Html\Tags\Tag;
 

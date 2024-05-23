@@ -3,16 +3,19 @@
 namespace Html\Elements\Body;
 use Html\Tags\Container\ContainerBodyTag;
 
-class HtmlAudio extends ContainerBodyTag{
-    
+class HtmlVideo extends ContainerBodyTag{
+
     public function __construct(){
-        $this->tagName="audio";
+        $this->tagName="video";
         $this->solo_attributes["autoplay"]=false;
         $this->solo_attributes["controls"]=false;
         $this->solo_attributes["loop"]=false;
         $this->solo_attributes["muted"]=false;
         $this->attributes["preload"]=null;
         $this->attributes["src"]=null;
+        $this->attributes["width"]=null;
+        $this->attributes["height"]=null;
+        $this->attributes["poster"]=null;
     }
 
     public function setAutoplay(){
@@ -41,7 +44,20 @@ class HtmlAudio extends ContainerBodyTag{
         $this->attributes["src"]=$value;
         return $this;
     }
+    public function setPoster($value){
+        $this->attributes["poster"]=$value;
+        return $this;
+    }
 
+    public function setHeight($value){
+        $this->attributes['height']=$value;
+        return $this;
+    }
+    public function setWidth($value){
+        $this->attributes['width']=$value;
+        return $this;
+    }
+    
     public function getAutoplay() {
         return $this->solo_attributes["autoplay"];
     }
@@ -64,5 +80,14 @@ class HtmlAudio extends ContainerBodyTag{
     public function getPreload() {
         return $this->attributes["preload"];
     }
-        
+    public function getPoster(){
+        return $this->attributes["poster"];
+    }
+
+    public function getHeight(){
+        return $this->attributes['height'];
+    }
+    public function getWidth(){
+        return $this->attributes['width'];
+    }
 }

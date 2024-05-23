@@ -135,7 +135,7 @@ class Tag {
     }
 
     public function getHidden() {
-        return $this->attributes['hidden'];
+        return $this->solo_attributes['hidden'];
     }
 
     public function getContentEditable() {
@@ -155,7 +155,7 @@ class Tag {
     }
 
     public function getInert() {
-        return $this->attributes['inert'];
+        return $this->solo_attributes['inert'];
     }
 
     public function getInputMode() {
@@ -180,6 +180,9 @@ class Tag {
 
     public function getRole() {
         return $this->attributes['role'];
+    }
+    public function getPopover() {
+        return $this->solo_attributes['popover'];
     }
 
     public function renderAttributes(){
