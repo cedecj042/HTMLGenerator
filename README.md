@@ -186,3 +186,151 @@ In this example, we create a body element and assign it to the variable '$body'.
     </html>
 
 Lastly, we generate the HTML structure by utilizing the 'Html' class. We then create and set up the head section with a title. Then, we add the previously created body structure. Lastly, we call the 'generate' method to output the complete HTML document.
+
+# CSS Generator using PHP
+
+## Overview
+The CSS Generator is designed to help create and manage CSS rules programmatically. 
+It consists of various classes that handle different aspects of CSS, such as selectors, properties, and combinators.
+
+## Folder Structure
+The project is organized into several folders:
+
+CSS
+├───Combinators
+├───Properties
+│   ├───Animation
+│   ├───Box
+│   ├───Display 
+│   ├───Layout
+│   ├───Miscellaneous
+│   └───Styling
+└───Pseudoclass
+
+- Combinators: Contains classes for combinator-related CSS properties.
+- Properties: Divided into subfolders like Animation, Box, Display, Layout, Miscellaneous, and Styling, each containing classes for specific CSS properties.
+- Pseudoclass: Contains classes defining CSS pseudoclass selectors.
+
+
+## Usage Instructions
+In order to fully utilize this program's capabilities, here are some examples of how to do so:
+
+
+### Step 1: Create a CSS Rule
+
+	$rule = new CssRule('body');
+	$rule->addProperty('background-color', 'blue');
+
+#### CSS Output:
+
+	body {
+    		background-color: blue;
+	}
+
+In this example, we first create a CssRule object with the selector body. We then add a background-color property to the rule.
+
+
+### Step 2: Add Multiple Properties
+
+	$rule->addProperties([
+    		'color' => 'white',
+    		'font-size' => '16px'
+	]);
+
+#### CSS Output:
+
+	body {
+	    background-color: blue;
+	    color: white;
+	    font-size: 16px;
+	}
+
+Here, we add multiple properties to the previously created CssRule object using the addProperties method.
+
+
+### Step 3: Create a CSS Generator and Add Rules
+
+	$cssGenerator = new CssGenerator();
+	$cssGenerator->addRule($rule);
+
+#### CSS Output:
+	
+	body {
+	    background-color: blue;
+	    color: white;
+	    font-size: 16px;
+	}
+
+In this step, we create a CssGenerator object and add the previously created CssRule object to it.
+
+
+### Step 4: Add a Comment
+
+	$cssGenerator->addComment('This is the main body styling');
+
+#### CSS Output:
+
+	/* This is the main body styling */
+	body {
+	    background-color: blue;
+	    color: white;
+	    font-size: 16px;
+	}
+
+We add a comment to the CSS output by using the addComment method of the CssGenerator object.
+
+
+### Step 5: Render the Complete CSS
+
+	$cssContent = $cssGenerator->render();
+
+#### CSS Output:
+
+	/* This is the main body styling */
+	body {
+	    background-color: blue;
+	    color: white;
+	    font-size: 16px;
+	}
+
+Finally, we render the complete CSS by calling the render method of the CssGenerator object.
+
+
+### Full Example: Generate a Complete CSS
+
+	$bodyStyle = new CssRule('body');
+	$bodyStyle->addProperties([
+		'background-color' => 'blue',
+		'color' => 'white',
+		'font-size' => '16px'
+	]);
+
+	$headingStyle = new CssRule('h1');
+	$headingStyle->addProperties([
+		'color' => 'red',
+		'font-size' => '32px'
+	]);
+
+	$cssGenerator = new CssGenerator();
+	$cssGenerator->addRule($bodyStyle);
+	$cssGenerator->addRule($headingStyle);
+	$cssGenerator->addComment('Main Body and Heading CSS');
+
+	$cssContent = $cssGenerator->render();
+
+
+#### CSS Output:
+
+	/* Main Body and Heading CSS */
+	body {
+		background-color: blue;
+		color: white;
+		font-size: 16px;
+	}
+
+	h1 {
+		color: red;
+		font-size: 32px;
+	}
+
+In this full example, we create two CssRule objects for body and h1 selectors, add properties to each, and then add these rules to the CssGenerator. We also add a comment and finally render the complete CSS.
